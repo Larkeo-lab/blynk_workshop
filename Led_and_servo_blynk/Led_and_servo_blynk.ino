@@ -8,8 +8,8 @@
 #include <BlynkSimpleEsp8266.h>
 #include <Servo.h>
 
-char ssid[] = "Dee";
-char pass[] = "bbbbbbbb";
+char ssid[] = "YOUR_WIFI_NAM";
+char pass[] = "YOUR_PASSOWRD";
 int ledPin = D2;
 Servo myservo;
 
@@ -36,14 +36,12 @@ BLYNK_WRITE(V1) {
   int value = param.asInt();  
   Serial.print("Servo value: ");
   Serial.println(value);
-
   if(value == 1){
     myservo.write(180);
   }else{
     myservo.write(0);
   }
 }
-
 void loop()
 {
   Blynk.run();
